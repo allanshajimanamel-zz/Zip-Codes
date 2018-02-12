@@ -4,6 +4,8 @@ This is a technical code assignment for a company.
 
 The code has been written from scratch. I have used Eclipse IDE and created a simple JAVA project. The class com.allan.zipcodes.ZipCodesIntervalUnion has a main method which can be utilized to run the code.
 
+The same project with dependencies managed through maven can be found at https://bitbucket.org/allanmanamel/zip-codes-interval/overview
+
 ### What is this repository for? ###
 
 * Quick summary of problem
