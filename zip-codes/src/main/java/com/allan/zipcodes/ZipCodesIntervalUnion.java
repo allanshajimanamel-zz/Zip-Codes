@@ -46,10 +46,13 @@ public class ZipCodesIntervalUnion {
 	 */
 	public static List<ZipCodeInterval> union(
 			List<ZipCodeInterval> zipCodeIntervals) {
+
+		//if zipCodeIntervals is null or empty return an empty list.
 		if (CollectionUtils.isEmpty(zipCodeIntervals)) {
 			return Collections.emptyList();
 		}
 
+		// if zipCodeIntervals has only 1 element then return the list.
 		if (zipCodeIntervals.size() == 1) {
 			return zipCodeIntervals;
 		}
@@ -60,7 +63,7 @@ public class ZipCodesIntervalUnion {
 
 		for (int i = 1; i < zipCodeIntervals.size(); i++) {
 			ZipCodeInterval current = zipCodeIntervals.get(i);
-			if (current.getLower() <= previous.getUpper()) {
+			if (current.getLower() <= previous.getUpper()) { // Zip code interval ranges overlap
 				previous = new ZipCodeInterval(previous.getLower(), Math.max(
 						previous.getUpper(), current.getUpper()));
 			} else {
